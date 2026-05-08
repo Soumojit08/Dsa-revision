@@ -6,10 +6,10 @@ public class BubbleSort {
 
         System.out.println("Unsorted Array : " + Arrays.toString(arr));
 
-        for (int i = 0; i < arr.length; i++) {
-            for (int j = 0; j < arr.length; j++) {
-                if (arr[i]>arr[j]){
-                    swap(arr, i, j); //swap array elem if i elem large than j 10>1
+        for (int i = 0; i < arr.length; i++) { // pass
+            for (int j = 0; j < arr.length-1; j++) { // compare element
+                if (arr[j]>arr[j+1]){
+                    swap(arr, j, j+1); //swap array elem if i elem large than j 10>1
                 }
             }
         }
