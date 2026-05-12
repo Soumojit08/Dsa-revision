@@ -60,7 +60,14 @@ public class Linklist {
     }
 
     public void deleteEnd(){
-        
+        if (head == null) System.out.println("No elem to delete");
+
+        Node temp = head;
+        //go till second last elem
+        while (temp.next.next != null){
+            temp = temp.next;
+        }
+        temp.next = null; //make the sec last node null so the last elem deleted
     }
 
     public void display(){

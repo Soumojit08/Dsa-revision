@@ -9,6 +9,7 @@ public class Main {
         list.insertEnd(40);
         list.insertEnd(50);
         list.deleteFirst();
+        list.deleteEnd();
         list.display();
     }
 }
