@@ -6,6 +6,7 @@ public class Main {
         list.insertFirst(10);
         list.insertFirst(5);
         list.insertFirst(1);
+        list.deleteFirst();
         list.display();
     }
 }

@@ -50,6 +50,15 @@ public class Linklist {
         size++;
     }
 
+    public void deleteFirst(){
+        if (head == null) System.out.println("No elem to delete");
+        int elem = head.data;
+
+        head = head.next;
+        size--;
+        System.out.println("Deleted Element : " + elem);
+    }
+
     public void display(){
         Node temp = head;
 
