@@ -59,6 +59,10 @@ public class Linklist {
         System.out.println("Deleted Element : " + elem);
     }
 
+    public void deleteEnd(){
+        
+    }
+
     public void display(){
         Node temp = head;
 
