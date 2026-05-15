@@ -50,6 +50,21 @@ public class Linklist {
         size++;
     }
 
+    public void insertAtPos(int value, int position){
+        Node node = new Node(value);
+        Node temp = head;
+
+        for (int i=1; i < position-1; i++){
+            temp = temp.next;
+        }
+        //till now temp is in prev node of the taget node
+
+        node.next = temp.next;
+        //now new node points to the taget pos
+        temp.next = node;
+        //temp node points to node now
+    }
+
     public void deleteFirst(){
         if (head == null) System.out.println("No elem to delete");
         int elem = head.data;
