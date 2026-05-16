@@ -96,7 +96,19 @@ public class Linklist {
     }
 
     public void deleteAtPos(int position) {
-
+        if (position < 0 || position > size) System.out.println("Invalid Position");
+        else if(position == 1) deleteFirst();
+        else if (position == size)  deleteEnd();
+        else {
+         Node temp = head;
+         Node prev = null;
+         for (int i=1; i<position;i++){
+             prev = temp;
+             temp = temp.next;
+         }
+         //delete node at pos
+            prev.next = temp.next;
+        }
     }
 
     public void display() {

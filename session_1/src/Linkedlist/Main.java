@@ -9,6 +9,7 @@ public class Main {
         list.insertEnd(40);
         list.insertEnd(50);
         list.insertAtPos(35, 4);
+        list.deleteAtPos(3);
 //        list.deleteFirst();
 //        list.deleteEnd();
         list.display();
