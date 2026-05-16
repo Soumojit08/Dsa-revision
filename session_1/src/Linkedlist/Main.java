@@ -17,5 +17,6 @@ public class Main {
         list.deleteEnd();
         list.display();
         list.reverseLinkList();
+        list.findLength();
     }
 }

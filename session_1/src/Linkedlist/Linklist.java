@@ -114,7 +114,6 @@ public class Linklist {
          size--;
         }
     }
-
     public Node getNode(int pos){
         Node temp = head;
 
@@ -152,5 +151,16 @@ public class Linklist {
         }
         System.out.print("End\n");
 
+    }
+
+    public void findLength(){
+        Node temp = head;
+        int counter = 1;
+
+        while (temp.next != null){
+            temp=temp.next;
+            counter++;
+        }
+        System.out.println("Length of LL : " + counter);
     }
 }
