@@ -92,7 +92,9 @@ public class Linklist {
         while (temp.next.next != null) {
             temp = temp.next;
         }
+        System.out.println("deleted element : " + temp.next.data);
         temp.next = null; //make the sec last node null so the last elem deleted
+        size--;
     }
 
     public void deleteAtPos(int position) {
@@ -107,8 +109,38 @@ public class Linklist {
              temp = temp.next;
          }
          //delete node at pos
+            System.out.println("Deleted Element : " + prev.next.data);
             prev.next = temp.next;
+         size--;
         }
+    }
+
+    public Node getNode(int pos){
+        Node temp = head;
+
+        for (int i=1; i<pos; i++){
+            temp = temp.next;
+        }
+        return temp;
+    }
+
+    public void reverseLinkList(){
+        int li = 1;
+        int ri = size;
+
+        while (li<ri){
+            Node left = getNode(li);
+            Node right = getNode(ri);
+
+            int temp = left.data;
+            left.data = right.data;
+            right.data = temp;
+
+            li++;
+            ri--;
+        }
+        System.out.println("\nLinkedlist data reversed");
+        display();
     }
 
     public void display() {
@@ -118,7 +150,7 @@ public class Linklist {
             System.out.print(temp.data + " -> ");
             temp = temp.next;
         }
-        System.out.print("End");
+        System.out.print("End\n");
 
     }
 }
