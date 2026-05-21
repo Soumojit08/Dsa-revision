@@ -18,5 +18,8 @@ public class Main {
         list.display();
         list.reverseLinkList();
         list.findLength();
+
+        boolean search = list.searchInList(20);
+        System.out.println(search);
     }
 }

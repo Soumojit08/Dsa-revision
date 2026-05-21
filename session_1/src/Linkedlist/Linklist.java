@@ -163,4 +163,16 @@ public class Linklist {
         }
         System.out.println("Length of LL : " + counter);
     }
+
+    public boolean searchInList(int val){
+        Node temp = head;
+
+        while (temp != null){
+            if (temp.data == val){
+                return true;
+            }
+            temp = temp.next;
+        }
+        return false;
+    }
 }
