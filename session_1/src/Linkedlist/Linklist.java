@@ -202,11 +202,23 @@ public class Linklist {
             f = f.next;
         }
 
-        while (f != null){
+        while (f.next != null){
             s = s.next;
             f = f.next;
         }
 
         System.out.println("Elem : " + s.data);
+    }
+
+    public void middleOfLL(){
+        Node s = head;
+        Node f = head;
+
+        while (f.next != null && f.next.next != null){
+            s = s.next;
+            f = f.next.next;
+        }
+
+        System.out.println("Middle : " + s.data);
     }
 }
