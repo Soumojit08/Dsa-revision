@@ -175,4 +175,21 @@ public class Linklist {
         }
         return false;
     }
+
+    public void removeIndx(int idx){
+        if (idx < 0 || idx > size) System.out.println("Invalid arguments");
+        else if (idx==0) {
+            deleteFirst();
+        } else if (idx == size-1) {
+            deleteEnd();
+        } else {
+            Node temp = head;
+
+            for (int i=1; i<idx; i++){
+                temp = temp.next;
+            }
+            temp.next = temp.next.next;
+            size--;
+        }
+    }
 }

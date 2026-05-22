@@ -13,6 +13,7 @@ public class Main {
         list.deleteFirst();
         list.display();
         list.deleteAtPos(3);
+        list.removeIndx(2);
         list.display();
         list.deleteEnd();
         list.display();
