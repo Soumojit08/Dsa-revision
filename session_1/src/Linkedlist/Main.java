@@ -10,6 +10,7 @@ public class Main {
         list.insertEnd(50);
         list.insertAtPos(35, 4);
         list.display();
+        list.kthFromLast(3);
         list.deleteFirst();
         list.display();
         list.deleteAtPos(3);

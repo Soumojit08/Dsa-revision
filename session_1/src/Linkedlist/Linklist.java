@@ -192,4 +192,21 @@ public class Linklist {
             size--;
         }
     }
+
+    public void kthFromLast(int k){
+        Node s = head;
+        Node f = head;
+
+        //fast initially go ahead
+        for (int i=0; i<k ; i++){
+            f = f.next;
+        }
+
+        while (f != null){
+            s = s.next;
+            f = f.next;
+        }
+
+        System.out.println("Elem : " + s.data);
+    }
 }
