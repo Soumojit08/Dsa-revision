@@ -42,7 +42,10 @@ public class Linklist {
     public void insertEnd(int value) {
         Node node = new Node(value);
 
-        if (tail == null) insertFirst(value);
+        if (tail == null) {
+            insertFirst(value);
+            return;
+        }
 
         tail.next = node;
         tail = node;
@@ -220,5 +223,34 @@ public class Linklist {
         }
 
         System.out.println("Middle : " + s.data);
+    }
+
+    public void mergeSortedLL(Linklist l1, Linklist l2){
+        Linklist ll = new Linklist();
+
+        Node s = l1.head;
+        Node f = l2.head;
+
+        while (s != null && f != null){
+            if (s.data < f.data){
+                ll.insertEnd(s.data);
+                s = s.next;
+            } else {
+                ll.insertEnd(f.data);
+                f = f.next;
+            }
+        }
+
+        while (s != null){
+            ll.insertEnd(s.data);
+            s=s.next;
+        }
+
+        while (f != null){
+            ll.insertEnd(f.data);
+            f=f.next;
+        }
+
+        ll.display();
     }
 }
