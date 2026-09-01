@@ -36,7 +36,8 @@ public class LinkedList {
 
     public void insertAtTail(int data) {
         Node newNode = new Node(data);
-        if (head == null || tail == null) {
+
+        if (head == null && tail == null) {
             head = newNode;
             tail = newNode;
         } else {
@@ -111,13 +112,14 @@ public class LinkedList {
     }
 
     public void deleteTail() {
-        if (head == null || tail == null) {
+        if (head == null) {
             System.out.println("List Empty");
             return;
         }
 
         if (head == tail) {
             deleteHead();
+            return;
         }
 
         Node temp = head;
@@ -127,7 +129,34 @@ public class LinkedList {
         }
 
         temp.next = null;
+        tail = temp;
         size--;
+    }
+
+    public void deleteAtPosition(int pos) {
+        if (pos < 1 || pos > size) {
+            System.out.println("Invalid Position");
+            return;
+        }
+
+        if (pos == 1) {
+            deleteHead();
+            return;
+        }
+        if (pos == size) {
+            deleteTail();
+            return;
+        }
+
+        Node temp = head;
+
+        for (int i = 1; i <= pos - 1; i++) {
+            temp = temp.next;
+        }
+
+        temp.next = temp.next.next;
+        size--;
+
     }
 
     public static void main(String[] args) {
@@ -139,6 +168,19 @@ public class LinkedList {
         list.printList();
         list.deleteHead();
         list.deleteTail();
+        list.printList();
+        list.insertAtHead(5);
+        list.insertAtTail(20);
+        list.printList();
+        list.insertAtIndex(100, 2);
+        list.printList();
+        list.deleteHead();
+        list.deleteTail();
+        list.printList();
+        list.insertAtIndex(30, 3);
+        list.insertAtIndex(20, 2);
+        list.printList();
+        list.deleteAtPosition(2);
         list.printList();
     }
 }
