@@ -37,6 +37,31 @@ public class ReverseLinkedlist {
         head = prev;
     }
 
+    public void midNode() {
+        Node temp = head;
+        int n = 0;
+
+        while (temp != null) {
+            temp = temp.next;
+            n++;
+        }
+
+        int mid = 0;
+        if (n % 2 == 0) {
+            // even length
+            mid = (n + 1) / 2;
+        } else {
+            // odd length
+            mid = n / 2;
+        }
+
+        for (int i = 1; i <= mid; i++) {
+            temp = temp.next;
+        }
+
+        System.out.println("Mid Node : " + temp.data);
+    }
+
     public void printList() {
         if (head == null) {
             System.out.println("Empty");
